@@ -5,7 +5,7 @@ const axios = require('axios');
 const url1 = 'https://fast.oclc.org/searchfast/fastsuggest?' +
     '&query=england&queryIndex=suggestall' +
     '&queryReturn=suggestall%2Cidroot%2Cauth%2Ctag%2Ctype%2Craw%2Cbreaker%2Cindicator' +
-    '&suggest=autoSubject&rows=10&callback=testcall'
+    '&suggest=autoSubject&rows=10'
 const url2 = 'https://reqres.in/api/users'
 //
 // returns xml
