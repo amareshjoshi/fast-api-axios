@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function fetchFastData() {
+        //
+        // url1 and url2 return json
+        const url1 = 'https://fast.oclc.org/searchfast/fastsuggest?' + 
+        '&query=england&queryIndex=suggestall' + 
+        '&queryReturn=suggestall%2Cidroot%2Cauth%2Ctag%2Ctype%2Craw%2Cbreaker%2Cindicator' +
+        '&suggest=autoSubject&rows=10&callback=testcall'
+        const url2 = 'https://reqres.in/api/users'
+        //
+        // url3 returns xml
+        const url3 = 'https://experimental.worldcat.org/fast/search?query=cql.any+all+%22england%22&httpAccept=application/xml&maximumRecords=10'
+
+
+        axios({
+          method: 'get',
+          url: url2,
+        })
+          .then((response) => {
+            console.log("FAST data = ", response.data);
+          })
+          .catch((error) => console.error(error));
+      }
+
+      fetchFastData();
+    </script>
+
+    <h1>FAST Test with Axios</h1>
+    
+    <!-- eventually the data wll go in here -->
+    <div id="example">
+      <p>View the javascript console log</p>
+    </div>
+  </body>
+</html>
